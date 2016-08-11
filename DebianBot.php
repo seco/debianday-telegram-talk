@@ -22,6 +22,18 @@ class DebianDayBotChat extends TelegramBotChat {
 		$this->apiSendMessage("Olá ", array('reply_markup' => $replyMarkup));
   }
 
+  private function executarURL($endereco, $parametros) {
+        $ch = curl_init(); 
+ 
+        curl_setopt($ch, CURLOPT_URL, $endereco .'/'.$parametros); 
+
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+ 
+        $output = curl_exec($ch); 
+ 
+        curl_close($ch);     
+  }
+
   public function message($text, $message) {
 
     $mensagens = array(0 => "Eu não converso, somente executo comandos.", 1 => "Digite um comando, não estou para conversa.");
