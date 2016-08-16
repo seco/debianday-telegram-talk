@@ -1,11 +1,11 @@
 <?php
 
-require_once 'PollBot.php';
+require_once 'DebianBot.php';
 
-define('BOT_TOKEN', 'XXXXXXXXX:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
-define('BOT_WEBHOOK', 'https://bot.server/poll-bot-webhook.php');
+define('BOT_TOKEN', 'your bot token');
+define('BOT_WEBHOOK', 'https://bot.server/your-webhook.php');
 
-$bot = new PollBot(BOT_TOKEN, 'PollBotChat');
+$bot = new DebianDayBot(BOT_TOKEN, 'DebianDayBotChat');
 
 if (php_sapi_name() == 'cli') {
   if ($argv[1] == 'set') {
